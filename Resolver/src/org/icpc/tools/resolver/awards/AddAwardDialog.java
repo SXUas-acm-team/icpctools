@@ -32,7 +32,7 @@ public class AddAwardDialog extends Dialog {
 	protected Award award = new Award();
 
 	protected int rc;
-
+	private static int award_cnt = 0;
 	public AddAwardDialog(Shell parent, Contest contest, ITeam[] teams) {
 		super(parent);
 		this.contest = contest;
@@ -87,11 +87,11 @@ public class AddAwardDialog extends Dialog {
 		awardIds.add("winner");
 
 		awardNames.add("Gold");
-		awardIds.add("gold-medal");
+		awardIds.add("gold-medal" + award_cnt);
 		awardNames.add("Silver");
-		awardIds.add("silver-medal");
+		awardIds.add("silver-medal" + award_cnt);
 		awardNames.add("Bronze");
-		awardIds.add("bronze-medal");
+		awardIds.add("bronze-medal" + award_cnt);
 
 		for (IProblem p : contest.getProblems()) {
 			awardNames.add("First to solve problem " + p.getLabel());
@@ -104,8 +104,8 @@ public class AddAwardDialog extends Dialog {
 		}
 
 		awardNames.add("Other");
-		awardIds.add("id-" + Math.random());
-
+		awardIds.add("id-" + award_cnt);
+		++award_cnt;
 		final Combo typeCombo = new Combo(comp, SWT.DROP_DOWN | SWT.READ_ONLY);
 		typeCombo.setItems(awardNames.toArray(new String[0]));
 		typeCombo.select(0);

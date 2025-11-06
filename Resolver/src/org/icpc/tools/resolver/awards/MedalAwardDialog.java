@@ -1,13 +1,9 @@
 package org.icpc.tools.resolver.awards;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.*;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.*;
 import org.icpc.tools.contest.model.IAward;
 import org.icpc.tools.contest.model.IAward.AwardType;
 import org.icpc.tools.contest.model.internal.Contest;
@@ -38,17 +34,37 @@ public class MedalAwardDialog extends AbstractAwardDialog {
 		label.setText("Number of gold:");
 		label.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
 
-		final Combo goldCombo = new Combo(comp, SWT.DROP_DOWN | SWT.READ_ONLY);
-		goldCombo.setItems(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-		goldCombo.select(4);
-		GridData data = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
-		data.horizontalSpan = 2;
-		goldCombo.setLayoutData(data);
-		goldCombo.addSelectionListener(new SelectionAdapter() {
+		final Text goldText = new Text(comp, SWT.BORDER | SWT.SINGLE);
+		goldText.setText("4"); // 设置默认值
+		GridData goldData = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
+		goldData.horizontalSpan = 2;
+		goldData.widthHint = 30;
+		goldText.setLayoutData(goldData);
+
+		goldText.addModifyListener(new ModifyListener() {
 			@Override
-			public void widgetSelected(SelectionEvent event) {
-				numGold = goldCombo.getSelectionIndex();
-				updateAwards();
+			public void modifyText(ModifyEvent e) {
+				try {
+					numGold = Integer.parseInt(goldText.getText());
+					updateAwards();
+				} catch (NumberFormatException ex) {
+					// 处理非数字输入，可以设置默认值或显示错误信息
+					// numGold = 0; // 可选：设置默认值
+					// updateAwards();
+				}
+			}
+		});
+
+		goldText.addVerifyListener(new VerifyListener() {
+			@Override
+			public void verifyText(VerifyEvent e) {
+				String newText = e.text;
+				for (int i = 0; i < newText.length(); i++) {
+					if (!Character.isDigit(newText.charAt(i))) {
+						e.doit = false;
+						return;
+					}
+				}
 			}
 		});
 
@@ -56,17 +72,37 @@ public class MedalAwardDialog extends AbstractAwardDialog {
 		label.setText("Number of silver:");
 		label.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
 
-		final Combo silverCombo = new Combo(comp, SWT.DROP_DOWN | SWT.READ_ONLY);
-		silverCombo.setItems(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-		silverCombo.select(4);
-		data = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
-		data.horizontalSpan = 2;
-		silverCombo.setLayoutData(data);
-		silverCombo.addSelectionListener(new SelectionAdapter() {
+		final Text silverText = new Text(comp, SWT.BORDER | SWT.SINGLE);
+		silverText.setText("4"); // 设置默认值
+		GridData silverData = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
+		silverData.horizontalSpan = 2;
+		silverData.widthHint = 30;
+		silverText.setLayoutData(silverData);
+
+		silverText.addModifyListener(new ModifyListener() {
 			@Override
-			public void widgetSelected(SelectionEvent event) {
-				numSilver = silverCombo.getSelectionIndex();
-				updateAwards();
+			public void modifyText(ModifyEvent e) {
+				try {
+					numSilver = Integer.parseInt(silverText.getText());
+					updateAwards();
+				} catch (NumberFormatException ex) {
+					// 处理非数字输入，可以设置默认值或显示错误信息
+					// numSilver = 0; // 可选：设置默认值
+					// updateAwards();
+				}
+			}
+		});
+
+		silverText.addVerifyListener(new VerifyListener() {
+			@Override
+			public void verifyText(VerifyEvent e) {
+				String newText = e.text;
+				for (int i = 0; i < newText.length(); i++) {
+					if (!Character.isDigit(newText.charAt(i))) {
+						e.doit = false;
+						return;
+					}
+				}
 			}
 		});
 
@@ -74,17 +110,38 @@ public class MedalAwardDialog extends AbstractAwardDialog {
 		label.setText("Number of bronze:");
 		label.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
 
-		final Combo bronzeCombo = new Combo(comp, SWT.DROP_DOWN | SWT.READ_ONLY);
-		bronzeCombo.setItems(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-		bronzeCombo.select(4);
-		data = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
-		data.horizontalSpan = 2;
-		bronzeCombo.setLayoutData(data);
-		bronzeCombo.addSelectionListener(new SelectionAdapter() {
+		final Text bronzeText = new Text(comp, SWT.BORDER | SWT.SINGLE);
+		bronzeText.setText("4"); // 设置默认值
+		GridData bronzeData = new GridData(SWT.BEGINNING, SWT.CENTER, true, false);
+		bronzeData.horizontalSpan = 2;
+		bronzeData.widthHint = 30;
+		bronzeText.setLayoutData(bronzeData);
+
+		bronzeText.addModifyListener(new ModifyListener() {
 			@Override
-			public void widgetSelected(SelectionEvent event) {
-				numBronze = bronzeCombo.getSelectionIndex();
-				updateAwards();
+			public void modifyText(ModifyEvent e) {
+				try {
+					numBronze = Integer.parseInt(bronzeText.getText());
+					updateAwards();
+				} catch (NumberFormatException ex) {
+					// 处理非数字输入，可以设置默认值或显示错误信息
+					// numBronze = 0; // 可选：设置默认值
+					// updateAwards();
+				}
+			}
+		});
+
+		bronzeText.addVerifyListener(new VerifyListener() {
+			@Override
+			public void verifyText(VerifyEvent e) {
+				// 只允许数字输入
+				String newText = e.text;
+				for (int i = 0; i < newText.length(); i++) {
+					if (!Character.isDigit(newText.charAt(i))) {
+						e.doit = false;
+						return;
+					}
+				}
 			}
 		});
 	}
