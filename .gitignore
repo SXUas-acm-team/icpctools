@@ -8,3 +8,7 @@
 bazel-*
 !/website/static/docs/*.pdf
 ContestUtil/src/org/icpc/tools/contest/util/cms/login.tsv
+**/.idea
+out/
+*.project
+*.iml
