@@ -7,8 +7,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ContestModel" />
+    <orderEntry type="module" module-name="PresCore" exported="" />
+    <orderEntry type="module" module-name="SWTLauncher" />
+    <orderEntry type="module" module-name="ContestModel" exported="" />
     <orderEntry type="module" module-name="PresCore" />
+    <orderEntry type="module" module-name="SWTLauncher" />
+    <orderEntry type="module" module-name="ContestModel" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>

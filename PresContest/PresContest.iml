@@ -7,9 +7,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ContestModel" />
+    <orderEntry type="module" module-name="PresCore" exported="" />
+    <orderEntry type="module" module-name="SWTLauncher" />
+    <orderEntry type="module" module-name="ContestModel" exported="" />
     <orderEntry type="module" module-name="PresCore" />
-    <orderEntry type="module-library">
+    <orderEntry type="module" module-name="SWTLauncher" />
+    <orderEntry type="module" module-name="ContestModel" />
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
@@ -19,14 +23,13 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/staging" />
+          <root url="jar://$MODULE_DIR$/../ContestModel/lib/svgSalamander-1.1.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/staging" recursive="false" />
       </library>
     </orderEntry>
   </component>

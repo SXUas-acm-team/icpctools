@@ -19,17 +19,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="SWTLauncher" />
+    <orderEntry type="module" module-name="ContestModel" exported="" />
+    <orderEntry type="module" module-name="SWTLauncher" />
     <orderEntry type="module" module-name="ContestModel" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/openpdf-2.0.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.cdi.4.0_1.0.93.jar!/" />
@@ -38,7 +32,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.pages.3.1_1.0.93.jar!/" />
@@ -47,7 +41,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.security.3.0_1.0.93.jar!/" />
@@ -56,7 +50,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.servlet.6.0_1.0.93.jar!/" />
@@ -65,16 +59,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.websocket.2.1_1.0.93.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.websocket.client.2.1_1.0.93.jar!/" />
@@ -83,14 +68,13 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../ContestModel/lib" />
+          <root url="jar://$MODULE_DIR$/io.openliberty.jakarta.websocket.2.1_1.0.93.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../ContestModel/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>
